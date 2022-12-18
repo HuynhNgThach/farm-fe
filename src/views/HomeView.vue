@@ -1,4 +1,4 @@
-<template>hello</template>
+<template>Hello 123</template>
 
 <script>
 import { mdiAccount } from "@mdi/js";
