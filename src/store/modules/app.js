@@ -1,6 +1,5 @@
 import { useLocalStorage } from "vue-composable";
 import { STORAGE } from "../../constants";
-import { useTheme } from "vuetify";
 const state = () => {
   return {
     theme: "dark",

@@ -11,14 +11,13 @@
   "dependencies": {
     "@vue/composition-api": "^1.7.1",
     "axios": "^1.2.1",
+    "element-plus": "^2.2.27",
     "vue": "^3.2.45",
     "vue-composable": "^1.0.0-beta.24",
     "vue-router": "^4.1.6",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@mdi/font": "^7.1.96",
-    "@mdi/js": "^7.1.96",
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
@@ -27,6 +26,8 @@
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
     "sass": "^1.56.2",
+    "unplugin-auto-import": "^0.12.1",
+    "unplugin-vue-components": "^0.22.12",
     "vite": "^4.0.0"
   }
 }
