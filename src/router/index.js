@@ -14,12 +14,24 @@ const router = createRouter({
           component: HomeView,
         },
         {
-          path: "/about",
-          name: "about",
+          path: "/encode",
+          name: "encode",
           // route level code-splitting
           // this generates a separate chunk (About.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import("../views/AboutView.vue"),
+          component: () => import("../views/EncodeTool.vue"),
+        },
+      ],
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "notFound",
+      component: () => import("../views/AppLayout.vue"),
+      children: [
+        {
+          path: "",
+          name: "notFound",
+          component: () => import("../views/NotFound.vue"),
         },
       ],
     },

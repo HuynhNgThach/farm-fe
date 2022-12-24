@@ -14,11 +14,11 @@
       <v-list-subheader>Apps & tool</v-list-subheader>
 
       <v-list-item
-        prepend-icon="mdi-folder"
+        prepend-icon="folder"
         title="My Files"
         value="myfiles"
       ></v-list-item>
-      <v-list-group value="Encode/decode tools">
+      <!--<v-list-group value="Encode tools">
         <template v-slot:activator="{ props }">
           <v-list-item
             prepend-icon="mdi-star"
@@ -35,11 +35,12 @@
           :title="'Base64 encode/decode'"
           :value="'Base64 encode/decode1'"
         ></v-list-item>
-      </v-list-group>
+      </v-list-group>-->
       <v-list-item
-        prepend-icon="mdi-star"
+        prepend-icon="password"
         title="Encode Tool"
         value="Encode Tool"
+        to="/encode"
       ></v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -71,6 +72,28 @@ export default {
   }
   .menu {
     margin-top: 30px;
+  }
+  .v-list-item {
+    padding: 8px 20px;
+    border-radius: 8px;
+    .v-list-item__content {
+      z-index: 999;
+      .v-list-item-title {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .v-list-item--active > .v-list-item__overlay,
+  .v-list-item[aria-haspopup="menu"][aria-expanded="true"]
+    > .v-list-item__overlay {
+    opacity: 1;
+    background: linear-gradient(
+      72.47deg,
+      rgb(var(--v-theme-primary)) 22.16%,
+      rgba(var(--v-theme-primary), 0.7) 76.47%
+    ) !important;
   }
 }
 </style>

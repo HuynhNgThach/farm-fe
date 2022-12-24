@@ -4,50 +4,46 @@
 
     <div class="right">
       <v-badge content="2" color="error">
-        <v-icon>mdi-bell-outline</v-icon>
+        <v-icon>notifications</v-icon>
       </v-badge>
 
       <v-btn
         variant="plain"
-        :icon="
-          theme.global.current.value.dark
-            ? 'mdi-white-balance-sunny'
-            : 'mdi-weather-night'
-        "
+        :icon="currentTheme === 'dark' ? 'light_mode' : 'dark_mode'"
         @click="toggleTheme"
       ></v-btn>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import { useTheme } from "vuetify";
+import { useStore } from "vuex";
+import { computed, onMounted } from "vue";
+const store = useStore();
+const currentTheme = computed(() => store.getters.getTheme);
+const theme = useTheme();
 
-export default {
-  name: "AppBar",
-  setup() {
-    const theme = useTheme();
-
-    return {
-      theme,
-      toggleTheme: () =>
-        (theme.global.name.value = theme.global.current.value.dark
-          ? "light"
-          : "dark"),
-    };
-  },
+const toggleTheme = () => {
+  const name = currentTheme.value === "dark" ? "light" : "dark";
+  store.dispatch("doChangeTheme", name);
+  theme.global.name.value = name;
 };
+onMounted(() => {
+  theme.global.name.value = currentTheme.value;
+});
 </script>
+
 <style lang="scss">
 .app-bar {
   padding: 0 1rem;
   background: rgb(var(--v-theme-blockColor)) !important;
-  height: 70px;
+  height: 64px;
   position: sticky;
   display: flex;
   align-items: center;
   /*top: 10px;*/
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2),
     0 3px 4px 0 rgba(12, 16, 27, 0.15), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
 

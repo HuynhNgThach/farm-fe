@@ -3,25 +3,32 @@ import App from "./App.vue";
 import router from "./router";
 import themes from "./theme";
 // Vuetify
-import "vuetify/styles";
-import { createVuetify } from "vuetify";
-import * as components from "vuetify/components";
-import * as directives from "vuetify/directives";
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
+import store from "./store";
 
-const vuetify = createVuetify({
-  components,
-  directives,
-  theme: {
-    themes: {
-      light: {
-        colors: themes.light,
-      },
-      dark: {
-        colors: themes.dark,
-      },
+import { aliases, md } from "vuetify/iconsets/md";
+
+const vuetify = new Vuetify({
+  defaults: {
+    VCard: {
+      elevation: 4,
     },
-
-    defaultTheme: "dark",
+  },
+  themes: {
+    light: {
+      ...themes.light,
+    },
+    dark: {
+      ...themes.dark,
+    },
+  },
+  icons: {
+    defaultSet: "md",
+    aliases,
+    sets: {
+      md,
+    },
   },
 });
 
@@ -31,5 +38,6 @@ const app = createApp(App);
 
 app.use(router);
 app.use(vuetify);
+app.use(store);
 
 app.mount("#app");

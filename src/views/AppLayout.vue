@@ -1,19 +1,17 @@
 <template>
   <v-app id="inspire">
-    <!--<v-layout>-->
-    <AppDrawer />
-    <AppContent />
-
-    <!--</v-layout>-->
+    <AppDrawer v-if="!isNotFound" />
+    <AppContent :notfound="isNotFound" />
   </v-app>
 </template>
-<script>
+<script setup>
 import AppDrawer from "../components/layouts/AppDrawer.vue";
 import AppContent from "../components/layouts/AppContent.vue";
-export default {
-  components: {
-    AppDrawer,
-    AppContent,
-  },
-};
+import { useRoute } from "vue-router";
+import { ref, computed } from "vue";
+
+const router = ref(useRoute());
+const isNotFound = computed(() => {
+  return router.value.name === "notFound";
+});
 </script>
