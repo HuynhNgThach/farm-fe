@@ -2,7 +2,9 @@
   <div class="notfound">
     <h1>Page Not Found!</h1>
     <p>Oops! 😖 The requested URL was not found on this server.</p>
-    <v-btn class="btn" to="/">Back to home</v-btn>
+    <el-button class="btn" type="primary" @click="router.push('/')"
+      >Back to home</el-button
+    >
     <div class="img">
       <img :src="NotFoundImg" />
     </div>
@@ -11,6 +13,8 @@
 
 <script setup>
 import NotFoundImg from "../assets/404.png";
+import { useRouter } from "vue-router";
+const router = useRouter();
 </script>
 <style lang="scss">
 .notfound {

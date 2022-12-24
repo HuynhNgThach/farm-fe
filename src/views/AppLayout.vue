@@ -1,9 +1,9 @@
 <template>
   <el-container class="layout-container">
-    <MenuLeft />
+    <MenuLeft v-if="!isNotFound" />
 
     <el-container direction="vertical" class="main-container">
-      <HeaderBar />
+      <HeaderBar v-if="!isNotFound" />
       <MainContent class="main" />
     </el-container>
   </el-container>

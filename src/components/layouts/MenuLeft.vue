@@ -14,26 +14,21 @@
           <el-icon><icon-menu /></el-icon>
           <span>Navigator Two</span>
         </el-menu-item>
-        <el-menu-item index="/navigator" disabled>
+        <!--<el-menu-item index="/navigator" disabled>
           <el-icon><document /></el-icon>
           <span>Navigator Three</span>
         </el-menu-item>
         <el-menu-item index="/navigator">
           <el-icon><setting /></el-icon>
           <span>Navigator Four</span>
-        </el-menu-item>
+        </el-menu-item>-->
       </el-menu>
     </el-scrollbar>
   </el-aside>
 </template>
 
 <script setup>
-import {
-  Document,
-  Menu as IconMenu,
-  Tools,
-  Setting,
-} from "@element-plus/icons-vue";
+import { Menu as IconMenu, Tools } from "@element-plus/icons-vue";
 </script>
 
 <style lang="scss" scoped>
