@@ -8,7 +8,7 @@
         <div class="encode-container__control">
           <el-select placeholder="Algorithms" v-model="algorithmSelect">
             <template v-for="(alg, k) in algorithms" :key="k">
-              <el-option :label="alg.key" :value="alg.value" />
+              <el-option :label="alg.value" :value="alg.key" />
             </template>
           </el-select>
           <el-button
@@ -73,7 +73,7 @@ onMounted(async () => {
     key: k,
     value: resp.algorithms[k],
   }));
-  algorithmSelect.value = algorithms.value[0].value;
+  algorithmSelect.value = algorithms.value[0].key;
 });
 </script>
 
