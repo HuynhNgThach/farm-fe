@@ -79,6 +79,12 @@ onMounted(async () => {
 
 <style lang="scss" scoped>
 .encode-container {
+  border: none;
+  height: 100%;
+  /*border-radius: 8px;
+  :deep(.el-card__body) {
+    border-radius: 8px;
+  }*/
   &__control {
     display: flex;
     flex-direction: column;

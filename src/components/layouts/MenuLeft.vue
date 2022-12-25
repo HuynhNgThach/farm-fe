@@ -2,7 +2,7 @@
   <el-aside class="menu-left">
     <el-scrollbar>
       <el-menu default-active="2" class="el-menu-vertical" :router="true">
-        <div class="menu-header">Farmhub</div>
+        <div class="menu-header" @click="router.push('/')">Farmhub</div>
         <el-sub-menu index="1">
           <template #title>
             <el-icon><Tools /></el-icon>
@@ -29,19 +29,23 @@
 
 <script setup>
 import { Menu as IconMenu, Tools } from "@element-plus/icons-vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 </script>
 
 <style lang="scss" scoped>
 .menu-left {
-  background-color: white;
+  background-color: white !important;
   height: 100vh;
   .el-menu {
     height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     /*padding-top: 20px;*/
     padding: 20px;
     :deep(.el-sub-menu__title) {
       border-radius: 8px;
     }
+    border-right: unset;
 
     .el-sub-menu__title span,
     .el-menu-item {
@@ -54,6 +58,8 @@ import { Menu as IconMenu, Tools } from "@element-plus/icons-vue";
     }
 
     .menu-header {
+      cursor: pointer;
+      user-select: none;
       margin-bottom: 20px;
       font-size: 30px;
       font-weight: bold;

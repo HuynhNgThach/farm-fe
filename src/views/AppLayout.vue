@@ -22,9 +22,6 @@ const isNotFound = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-.layout-container {
-  height: 100vh;
-}
 .layout-container .el-header {
   position: relative;
   background-color: var(--el-color-primary-light-7);
