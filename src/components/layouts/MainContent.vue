@@ -1,5 +1,5 @@
 <template>
-  <el-main class="main">
+  <el-main>
     <el-scrollbar>
       <RouterView></RouterView>
     </el-scrollbar>
@@ -10,11 +10,4 @@
 import { RouterView } from "vue-router";
 </script>
 
-<style lang="scss" scoped>
-.main {
-  height: calc(100% - 300px);
-  :deep(.el-scrollbar__view) {
-    /*height: 50%;*/
-  }
-}
-</style>
+<style lang="scss" scoped></style>
