@@ -46,8 +46,11 @@ const isNotFound = computed(() => {
   right: 20px;
 }
 .main-container {
-  max-width: 70vw;
-  margin: 20px auto 0px;
+  max-width: 80vw;
+  margin: 20px auto 20px;
+  padding: 0 16px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
   .main {
     margin-top: 20px;
   }

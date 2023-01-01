@@ -9,9 +9,24 @@
 /*
   2. Remove default margin
 */
-
+:root {
+  --el-menu-base-level-padding: 30px;
+}
 * {
   margin: 0;
+}
+html {
+  min-height: 100%;
+  background-image: url(/pattern.svg),
+    linear-gradient(to bottom, rgb(103 0 255 / 4%), transparent),
+    linear-gradient(to bottom left, rgb(255 0 201 / 2%), transparent);
+  background-size: 4px 4px, 100vw 200vh, 100vw 200vh;
+  background-repeat: repeat, no-repeat, no-repeat;
+  scroll-behavior: smooth;
+}
+html.dark {
+  background-image: unset;
+  background-color: #25293c;
 }
 /*
   3. Allow percentage-based heights in the application
@@ -30,7 +45,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: "Manrope", sans-serif;
-  background-color: #f8f7fa;
+  /*background-color: #f8f7fa;*/
 }
 /*
   6. Improve media defaults

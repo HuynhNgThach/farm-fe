@@ -1,13 +1,17 @@
-import { useLocalStorage } from "vue-composable";
+import { isClient, useLocalStorage } from "vue-composable";
 import { STORAGE } from "../../constants";
 const state = () => {
   return {
     theme: "dark",
+    menuCollpase: false,
   };
 };
 const mutations = {
   CHANGE_THEME(state, name) {
     state.theme = name;
+  },
+  CHANGE_MENU_COLLAPSE(state, isCollpase) {
+    state.menuCollpase = isCollpase;
   },
 };
 const actions = {
@@ -23,10 +27,16 @@ const actions = {
     console.log("from init ", themeStorage.storage.value);
     commit("CHANGE_THEME", themeStorage.storage.value);
   },
+  doChangeMenuCollapse({ commit }, isCollpase) {
+    commit("CHANGE_MENU_COLLAPSE", isCollpase);
+  },
 };
 const getters = {
   getTheme(state) {
     return state.theme;
+  },
+  getMenuCollpase(state) {
+    return state.menuCollpase;
   },
 };
 

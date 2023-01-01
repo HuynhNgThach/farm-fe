@@ -1,11 +1,59 @@
 // only scss variables
-
 $--colors: (
+  "white": #ffffff,
+  "black": #000000,
   "primary": (
-    "base": #0469e5,
+    "base": #796df1,
+  ),
+  "success": (
+    "base": #67c23a,
+  ),
+  "warning": (
+    "base": #e6a23c,
+  ),
+  "danger": (
+    "base": #f56c6c,
+  ),
+  "error": (
+    "base": #f56c6c,
+  ),
+  "info": (
+    "base": #909399,
   ),
 );
 
 @forward "element-plus/theme-chalk/src/dark/var.scss" with (
-  $colors: $--colors
+  $bg-color: (
+    "page": #2f3348,
+    "overlay": #2f3348,
+  ),
+  $fill-color: (
+    "blank": #2f3348,
+  ),
+  $colors: $--colors,
+  $card: (
+    "border-color": transparent,
+  ),
+  $box-shadow: (
+    "": (
+      0 3px 9px 1px rgba(12, 16, 27, 0.15),
+      0 9px 8px rgba(12, 16, 27, 0.01),
+      0 1px 6px 4px rgba(12, 16, 27, 0.08),
+    ),
+    "light": (
+      0 3px 9px 1px rgba(12, 16, 27, 0.15),
+      0 9px 8px rgba(12, 16, 27, 0.01),
+      0 1px 6px 4px rgba(12, 16, 27, 0.08),
+    ),
+    "lighter": (
+      0 3px 9px 1px rgba(12, 16, 27, 0.15),
+      0 9px 8px rgba(12, 16, 27, 0.01),
+      0 1px 6px 4px rgba(12, 16, 27, 0.08),
+    ),
+    "dark": (
+      0 3px 9px 1px rgba(12, 16, 27, 0.15),
+      0 9px 8px rgba(12, 16, 27, 0.01),
+      0 1px 6px 4px rgba(12, 16, 27, 0.08),
+    ),
+  )
 );
